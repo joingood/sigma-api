@@ -78,10 +78,10 @@ class RoomTypeModel extends Conexion{
 
                 return pool.request()
                 .input('FILTER', sql.VarChar, JSON.stringify(FilterQuery))
-                .execute("Procedure_RoomTypeChange");
+                .execute("Procedure_RoomTypeQuery");
             },fn_result: (result)=>{
                 res.setHeader('Content-Type', 'json/application');
-                res.send(result.recordsets);
+                res.send(result.recordset);
                 result = res = null;
             }
         });

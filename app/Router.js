@@ -27,11 +27,11 @@ class Router{
         //CREATE: POST
         route.post("/roomType/create",RoomTypeController.create);
         //UPDATE: PUT
-        route.put("/hotel/update",RoomTypeController.update);
+        route.put("/roomType/update",RoomTypeController.update);
         //LIST BASIC: GET
-        route.get("/hotel/list",RoomTypeController.list);
+        route.get("/roomType/list",RoomTypeController.list);
         //Delete: delete
-        route.delete("/hotel/delete",RoomTypeController.delete);
+        route.delete("/roomType/delete",RoomTypeController.delete);
 
         /*//Client
         //CREATE: POST

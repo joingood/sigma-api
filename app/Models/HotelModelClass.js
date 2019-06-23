@@ -81,7 +81,7 @@ class HotelModel extends Conexion{
                 .execute("Procedure_HotelQuery");
             },fn_result: (result)=>{
                 res.setHeader('Content-Type', 'json/application');
-                res.send(result.recordsets);
+                res.send(result.recordset);
                 result = res = null;
             }
         });
