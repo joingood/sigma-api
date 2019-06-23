@@ -1,7 +1,5 @@
 
-const {SingController, HotelController, RoomTypeController} = require("./Controllers/main");
-
-//const {Authentication, ManagerFileMiddleware} = require("../Modules/main");
+const {SingController, HotelController, RoomTypeController, BookingController} = require("./Controllers/main");
 
 class Router{
 
@@ -32,6 +30,16 @@ class Router{
         route.get("/roomType/list",RoomTypeController.list);
         //Delete: delete
         route.delete("/roomType/delete",RoomTypeController.delete);
+
+        //Booking
+        //CREATE: POST
+        route.post("/booking/create",BookingController.create);
+        //UPDATE: PUT
+        route.put("/booking/update",BookingController.update);
+        //LIST BASIC: GET
+        route.get("/booking/list",BookingController.list);
+        //Delete: delete
+        route.delete("/booking/delete",BookingController.delete);
 
         /*//Client
         //CREATE: POST
