@@ -4,8 +4,14 @@ const jsonwt = require('./jsonwtClass'),
       JWT = new jsonwt,
       validator = require("Validator");
 
+      /**
+       * 
+       *    Esta clase se encarga de manejar toda la autenticacion y validaciones de la api
+       * 
+       */
 class Authentication{
 
+    //Autenticador de token para login y acceso a la api
     authenticationToken(req, res, next){
 
         const header = req.headers;
@@ -31,6 +37,7 @@ class Authentication{
         next();
     }
 
+    //Validador de datos tipo json
     isValid(data){
 
         let validated = validator.make(data.params,data.rules);

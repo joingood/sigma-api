@@ -1,4 +1,9 @@
 
+/**
+ * 
+ * Esta clase se encarga de tener esquema de datos para tener una estructura centralizada
+ * 
+ */
 class SchemaClass {
 
     //Esquema del FilterQuery 

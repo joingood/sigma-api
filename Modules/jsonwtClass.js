@@ -2,8 +2,14 @@ const jwt    = require('jwt-simple'),
       moment = require('moment'),
       {jwtoken} = require('../config.api');
 
-class jsonwt{
+      /**
+       * 
+       * Clase que se encarga de manejar json token
+       * 
+       */
 
+class jsonwt{
+    //Codificando la data
     encode(data){
         return jwt.encode({
             data,
@@ -16,7 +22,7 @@ class jsonwt{
             }
           }, jwtoken.SECRET_KEY);
     }
-
+    //Descodificando la data
     decode(token){
         return jwt.decode(token, jwtoken.SECRET_KEY);
     }

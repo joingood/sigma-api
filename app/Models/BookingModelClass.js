@@ -4,11 +4,11 @@ const {Conexion, SchemaClass} = require("../../Modules/main");
 
 class BookingModel extends Conexion{
 
-    /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+     /**
+    * BookingModel Model: POST
+    * Este action se encarga de crear un nuevo registro
+    * @SP: Procedure_BookingChange
+    * @Param : Data AS JSON, Room AS JSON, Transfer AS JSON
     * END;
     */
     create(data,res){
@@ -33,10 +33,10 @@ class BookingModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * AvailBooking Model: PUT
+    * Este action se encarga de actualizar un registro/s
+    * @SP: Procedure_BookingChange
+    * @Param : Data AS JSON, Room AS JSON, Transfer AS JSON
     * END;
     */
    update(data,res){
@@ -61,10 +61,10 @@ class BookingModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * AvailBooking Model: GET
+    * Este action se encarga de recuperar la data
+    * @SP: Procedure_BookingQuery
+    * @Param : 
     * END;
     */
    list(data,res){
@@ -88,10 +88,10 @@ class BookingModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * AvailBooking Model: DELETE
+    * Este action se encarga de eliminar o ocultar registro/s
+    * @SP: Procedure_BookingChange
+    * @Param : NumberBooking AS INT
     * END;
     */
    delete(data,res){

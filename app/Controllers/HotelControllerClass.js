@@ -5,7 +5,13 @@ const {Authentication} = require("../../Modules/main");
 
 class HotelController extends HotelModel{
 
-    //POST
+    /**
+    * METOD: POST
+    * Este action se encarga de crear un nuevo registro
+    * Ruta: /hotel/create
+    * @Param : NAME AS STRING, ImageUrl AS STRING
+    * END;
+    */
     create(req, res){
         Authentication.isValid({
             res,
@@ -20,7 +26,13 @@ class HotelController extends HotelModel{
         });
     }
 
-    //PUT
+    /**
+    * METOD: PUT
+    * Este action se encarga de actualizar un registro/s
+    * Ruta: /hotel/update
+    * @Param : Id AS INT, Name AS STRING, ImageUrl AS STRING
+    * END;
+    */
     update(req, res){
         Authentication.isValid({
             res,
@@ -36,12 +48,24 @@ class HotelController extends HotelModel{
         });
     }
 
-    //GET
+    /**
+    * METOD: GET
+    * Este action se encarga de recuperar la data
+    * Ruta: /hotel/list
+    * @Param : 
+    * END;
+    */
     list(req, res){
         super.list(null,res);
     }
 
-    //PUT
+    /**
+    * METOD: DELETE
+    * Este action se encarga de eliminar o ocultar registro/s
+    * Ruta: /hotel/delete
+    * @Param : Id AS INT
+    * END;
+    */
     delete(req, res){
         Authentication.isValid({
             res,

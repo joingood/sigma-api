@@ -1,0 +1,19 @@
+
+
+#Archivo / Config.Api.js (en la raiz del proyecto):
+
+Descripcion: Este archivo contiene todas la configuraciones de la api, por lo tanto cuando tengla la DB 
+en su pc, debe de indicarle en este archivo las credenciales de la DB.
+
+#Archivos / Resoruce/sigma.sql y sql.bak (Base de dato):
+
+Descripcion: Aqui esta el script y backup de la db.
+Nota: Todas las setencia SQL la he hecho con SP, View y Funciones escalares
+
+######Iniciar servidor######
+
+npm install
+
+node app
+
+Nota: debe de tener instalado, NPM y NODEJS al menos en la version 10.x

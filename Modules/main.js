@@ -1,5 +1,8 @@
-//Export the controllers
-
+/**
+ * 
+ * Se encarga de cargar los componentes de la carpeta Modules
+ * 
+ */
 
 const requireController = {
     Authentication:         require("./AuthenticationClass"),

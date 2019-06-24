@@ -1,3 +1,8 @@
+/**
+ * 
+ * Este modulo se encarga de tener todas las configuraciones oportunas de la api
+ * 
+ */
 
 module.exports  = {
 

@@ -1,6 +1,10 @@
 
 const {SingController, HotelController, RoomTypeController, BookingController, AvailBookingController} = require("./Controllers/main");
-
+/**
+ * 
+ * Esta clase define todas las rutas de accesos de la api
+ * Methodos: Post, Put, Delete, Get
+ */
 class Router{
 
     constructor(route){

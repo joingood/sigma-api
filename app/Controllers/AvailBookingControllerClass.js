@@ -5,15 +5,21 @@ const {Authentication} = require("../../Modules/main");
 
 class AvailBookingController extends AvailBookingModel{
 
-    //POST
+
+    /**
+    * METOD: POST
+    * Este action se encarga de crear un nuevo registro
+    * Ruta: /availBooking/create
+    * @Param : Data AS JSON, Room AS JSON
+    * END;
+    */
     create(req, res){
         Authentication.isValid({
             res,
             params: req.body,
             rules: {
                 Data: "required|string|min:10",
-                Room: "required|string|min:10",
-                Transfer: "required|string|min:10",
+                Room: "required|string|min:10"
             },
             is: ()=>{
                 super.create(req.body,res);
@@ -21,15 +27,20 @@ class AvailBookingController extends AvailBookingModel{
         });
     }
 
-    //PUT
+    /**
+    * METOD: PUT
+    * Este action se encarga de actualizar un registro/s
+    * Ruta: /availBooking/update
+    * @Param : Data AS JSON, Room AS JSON
+    * END;
+    */
     update(req, res){
         Authentication.isValid({
             res,
             params: req.body,
             rules: {
-                Id: "required|integer|min:1",
-                Name: "required|string|min:3|max:50",
-                ImageUrl: "required|string|min:0|max:250"
+                Data: "required|string|min:10",
+                Room: "required|string|min:10"
             },
             is: ()=>{
                 super.update(req.body,res);
@@ -37,18 +48,30 @@ class AvailBookingController extends AvailBookingModel{
         });
     }
 
-    //GET
+    /**
+    * METOD: GET
+    * Este action se encarga de recuperar la data
+    * Ruta: /availBooking/list
+    * @Param : 
+    * END;
+    */
     list(req, res){
         super.list(null,res);
     }
 
-    //PUT
+    /**
+    * METOD: DELETE
+    * Este action se encarga de eliminar o ocultar registro/s
+    * Ruta: /availBooking/delete
+    * @Param : DraffBookingId AS INT
+    * END;
+    */
     delete(req, res){
         Authentication.isValid({
             res,
             params: req.body,
             rules: {
-                Id: "required|integer|min:1"
+                DraffBookingId: "required|integer|min:1"
             },
             is: ()=>{
                 super.delete(req.body,res);

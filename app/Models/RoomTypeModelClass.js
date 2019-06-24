@@ -5,10 +5,10 @@ const {Conexion, SchemaClass} = require("../../Modules/main");
 class RoomTypeModel extends Conexion{
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * RoomTypeModel Model: POST
+    * Este action se encarga de crear un nuevo registro
+    * @SP: Procedure_RoomTypeChange
+    * @Param : Name AS STRING, ImageUrl AS STRING
     * END;
     */
     create(data,res){
@@ -33,10 +33,10 @@ class RoomTypeModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * RoomTypeModel Model: PUT
+    * Este action se encarga de actualizar un registro/s
+    * @SP: Procedure_RoomTypeChange
+    * @Param : Id AS INT, Name AS STRING, ImageUrl AS STRING
     * END;
     */
    update(data,res){
@@ -61,10 +61,10 @@ class RoomTypeModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * RoomTypeModel Model: GET
+    * Este action se encarga de recuperar la data
+    * @SP: Procedure_RoomTypeQuery
+    * @Param : 
     * END;
     */
    list(data,res){
@@ -88,10 +88,10 @@ class RoomTypeModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * RoomTypeModel Model: DELETE
+    * Este action se encarga de eliminar o ocultar registro/s
+    * @SP: Procedure_RoomTypeChange
+    * @Param : Id AS INT
     * END;
     */
    delete(data,res){

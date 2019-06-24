@@ -4,11 +4,11 @@ const {Conexion, JWT, Crypto, SchemaClass} = require("../../Modules/main");
 
 class HotelModel extends Conexion{
 
-    /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+   /**
+    * HotelModel Model: POST
+    * Este action se encarga de crear un nuevo registro
+    * @SP: Procedure_HotelChange
+    * @Param : NAME AS STRING, ImageUrl AS STRING
     * END;
     */
     create(data,res){
@@ -32,11 +32,11 @@ class HotelModel extends Conexion{
         });
     }
 
-    /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+   /**
+    * HotelModel Model: PUT
+    * Este action se encarga de actualizar un registro/s
+    * @SP: Procedure_HotelChange
+    * @Param : Id AS INT, Name AS STRING, ImageUrl AS STRING
     * END;
     */
    update(data,res){
@@ -61,10 +61,10 @@ class HotelModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * AvailBooking Model: GET
+    * Este action se encarga de recuperar la data
+    * @SP: Procedure_HotelQuery
+    * @Param : 
     * END;
     */
    list(data,res){
@@ -88,10 +88,10 @@ class HotelModel extends Conexion{
     }
 
     /**
-    * Singing Model: POST
-    * This model is for...
-    * @SP: sp_singin
-    * @Param 
+    * AvailBooking Model: DELETE
+    * Este action se encarga de eliminar o ocultar registro/s
+    * @SP: Procedure_HotelChange
+    * @Param : Id AS INT
     * END;
     */
    delete(data,res){

@@ -1,9 +1,15 @@
 const SQL = require("mssql"),
     {ConfigDB} = require("../config.api");
 
+    /**
+     * 
+     * Clase para manejar la conexion a la DB
+     * 
+     */
 
 class Conexion{
-
+    
+    //Metodo async para las conexiones multiples
     async(data){
 
         new SQL.ConnectionPool(ConfigDB).connect().then(pool => {
