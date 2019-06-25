@@ -60,6 +60,29 @@ class RoomTypeController extends RoomTypeModel{
     }
 
     /**
+    * METOD: GET
+    * Este action se encarga una data expecifica
+    * Ruta: /hotel/getById
+    * @Param Id AS INT: 
+    * END;
+    */
+    getById(req, res){
+
+        Authentication.isValid({
+            res,
+            params: req.query,
+            rules: {
+                Id: "required|integer|min:1"
+            },
+            is: ()=>{
+                super.getById(req.query,res);
+            }
+        });
+
+        
+    }
+
+    /**
     * METOD: DELETE
     * Este action se encarga de eliminar o ocultar registro/s
     * Ruta: /roomType/delete
@@ -69,12 +92,12 @@ class RoomTypeController extends RoomTypeModel{
     delete(req, res){
         Authentication.isValid({
             res,
-            params: req.body,
+            params: req.query,
             rules: {
                 Id: "required|integer|min:1"
             },
             is: ()=>{
-                super.delete(req.body,res);
+                super.delete(req.query,res);
             }
         });
     }

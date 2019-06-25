@@ -11,7 +11,8 @@ class SchemaClass {
 
         const __RemplaceData = new this();
         return new this().__RemplaceData({
-            NAME_QUERY: null
+            NAME_QUERY: null,
+            ToId: 0
         },_obj);
     }
 

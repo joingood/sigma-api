@@ -26,7 +26,7 @@ class RoomTypeModel extends Conexion{
                 .execute("Procedure_RoomTypeChange");
             },fn_result: (result)=>{
                 res.setHeader('Content-Type', 'json/application');
-                res.send(result.recordset);
+                res.send(result.recordset[0]);
                 result = res = null;
             }
         });
@@ -54,7 +54,7 @@ class RoomTypeModel extends Conexion{
                 .execute("Procedure_RoomTypeChange");
             },fn_result: (result)=>{
                 res.setHeader('Content-Type', 'json/application');
-                res.send(result.recordset);
+                res.send(result.recordset[0]);
                 result = res = null;
             }
         });
@@ -88,6 +88,34 @@ class RoomTypeModel extends Conexion{
     }
 
     /**
+    * AvailBooking Model: GET
+    * Este action se encarga de recuperar la data
+    * @SP: Procedure_HotelQuery
+    * @Param Id AS INT: 
+    * END;
+    */
+   getById(data,res){
+        super.async({
+            res: res,
+            fn_params: (sql,pool)=>{
+
+                const FilterQuery = SchemaClass.FilterQuery({
+                    NAME_QUERY: "getById",
+                    ToId: data.Id
+                });
+
+                return pool.request()
+                .input('FILTER', sql.VarChar, JSON.stringify(FilterQuery))
+                .execute("Procedure_RoomTypeQuery");
+            },fn_result: (result)=>{
+                res.setHeader('Content-Type', 'json/application');
+                res.send(result.recordset[0]);
+                result = res = null;
+            }
+        });
+    }
+
+    /**
     * RoomTypeModel Model: DELETE
     * Este action se encarga de eliminar o ocultar registro/s
     * @SP: Procedure_RoomTypeChange
@@ -109,7 +137,7 @@ class RoomTypeModel extends Conexion{
                 .execute("Procedure_RoomTypeChange");
             },fn_result: (result)=>{
                 res.setHeader('Content-Type', 'json/application');
-                res.send(result.recordset);
+                res.send(result.recordset[0]);
                 result = res = null;
             }
         });

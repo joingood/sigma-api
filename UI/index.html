@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SIGMA</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <!-- <link rel="stylesheet" href="./assets/materialize.css"> 
+     <script src="./assets/materialize.js"></script> -->
+  </head>
+  <body>
+
+    <!-- Barra de navegacion -->
+
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">SIGMA</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#/hotel">Hotel</a></li>
+            <li><a href="#/roomType">Tipo Hotel</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <div id="app"></div>
+
+
+    <script>
+
+        window.__sigma = {
+          URL_REQUEST: (path)=>{
+            return `http://localhost:3000/${path}`;
+          }
+        }
+    
+    </script>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>

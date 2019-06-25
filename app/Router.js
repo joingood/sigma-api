@@ -24,6 +24,8 @@ class Router{
         route.get("/hotel/list",HotelController.list);
         //Delete: delete
         route.delete("/hotel/delete",HotelController.delete);
+        //GETBYID : GET
+        route.get("/hotel/getById",HotelController.getById);
 
         //RoomType
         //CREATE: POST
@@ -34,6 +36,8 @@ class Router{
         route.get("/roomType/list",RoomTypeController.list);
         //Delete: delete
         route.delete("/roomType/delete",RoomTypeController.delete);
+        //GETBYID : GET
+        route.get("/roomType/getById",RoomTypeController.getById);
 
         //Booking
         //CREATE: POST

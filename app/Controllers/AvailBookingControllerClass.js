@@ -69,12 +69,12 @@ class AvailBookingController extends AvailBookingModel{
     delete(req, res){
         Authentication.isValid({
             res,
-            params: req.body,
+            params: req.query,
             rules: {
                 DraffBookingId: "required|integer|min:1"
             },
             is: ()=>{
-                super.delete(req.body,res);
+                super.delete(req.query,res);
             }
         });
     }
