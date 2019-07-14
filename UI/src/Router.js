@@ -58,6 +58,32 @@ const RoomTypeUpdateView = resolve => {
     });
 }
 
+/**
+ * 
+ *  Vista de disponibilidad de reservas
+ * 
+ */
+
+//Index View
+const AvailBookingIndexView = resolve => {
+    require.ensure(["./Views/AvailBooking/index.vue"],()=>{
+        resolve(require("./Views/AvailBooking/index.vue"));
+    });
+}
+//Create view
+const AvailBookingCreateView = resolve => {
+    require.ensure(["./Views/AvailBooking/create.vue"],()=>{
+        resolve(require("./Views/AvailBooking/create.vue"));
+    });
+}
+//Update View
+const AvailBookingUpdateView = resolve => {
+    require.ensure(["./Views/AvailBooking/update.vue"],()=>{
+        resolve(require("./Views/AvailBooking/update.vue"));
+    });
+}
+
+
 const Router = [
     {path: "/booking", component: BookingView},
 
@@ -70,6 +96,11 @@ const Router = [
     {path: "/roomType", component: RoomTypeIndexView},
     {path: "/roomType/create", component: RoomTypeCreateView},
     {path: "/roomType/update/:id", component: RoomTypeUpdateView},
+
+    //Rutas para disponibilidad de reservas
+    {path: "/availBooking", component: AvailBookingIndexView},
+    {path: "/availBooking/create", component: AvailBookingCreateView},
+    {path: "/availBooking/update/:id", component: AvailBookingUpdateView},
 
     //Otras rutas
     {path: "", component: HomeIndex},

@@ -58,6 +58,8 @@ class Router{
         route.get("/availBooking/list",AvailBookingController.list);
         //Delete: delete
         route.delete("/availBooking/delete",AvailBookingController.delete);
+        //GETBYID : GET
+        route.get("/availBooking/getById",AvailBookingController.getById);
     }
 
 }

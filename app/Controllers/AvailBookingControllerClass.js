@@ -14,12 +14,13 @@ class AvailBookingController extends AvailBookingModel{
     * END;
     */
     create(req, res){
+        //console.log(req.body);
         Authentication.isValid({
             res,
             params: req.body,
             rules: {
-                Data: "required|string|min:10",
-                Room: "required|string|min:10"
+                Data: "required",
+                Room: "required"
             },
             is: ()=>{
                 super.create(req.body,res);
@@ -39,8 +40,8 @@ class AvailBookingController extends AvailBookingModel{
             res,
             params: req.body,
             rules: {
-                Data: "required|string|min:10",
-                Room: "required|string|min:10"
+                Data: "required",
+                Room: "required"
             },
             is: ()=>{
                 super.update(req.body,res);
@@ -57,6 +58,28 @@ class AvailBookingController extends AvailBookingModel{
     */
     list(req, res){
         super.list(null,res);
+    }
+
+    /**
+    * METOD: GET
+    * Este action se encarga una data expecifica
+    * Ruta: /hotel/getById
+    * @Param Id AS INT: 
+    * END;
+    */
+    getById(req, res){
+
+        Authentication.isValid({
+            res,
+            params: req.query,
+            rules: {
+                Id: "required|integer|min:1"
+            },
+            is: ()=>{
+                super.getById(req.query,res);
+            }
+        });
+
     }
 
     /**
